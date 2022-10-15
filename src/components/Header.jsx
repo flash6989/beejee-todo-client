@@ -6,6 +6,11 @@ import { observer } from "mobx-react-lite";
 
 export const Header = observer( (props) => {
   const {user} = useContext(Context)
+  const logout = () => {
+    user.setIsUser(null)
+    user.setIsAuth(null)
+    user.setIsAdmin(null)
+  }
   return (
     <div className="header__container ">
       <div className="container">
@@ -14,9 +19,9 @@ export const Header = observer( (props) => {
           <div div className="header__menu-links">
             <ul>
               {user.isAuth ?
-                <li>Выйти</li>
+                <li onClick={() => logout()}>Выйти</li>
                 :
-                <li><Link to="/auth" onClick={() => user.setIsAuth(true)}>Войти</Link></li>
+                <li><Link to="/auth">Войти</Link></li>
               }
             </ul>
           </div>

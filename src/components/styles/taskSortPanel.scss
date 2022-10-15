@@ -18,6 +18,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
     &-name {
       padding: 15px 20px;
@@ -27,6 +28,7 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
     &-email {
       padding: 15px 20px;
@@ -35,6 +37,7 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
     &-empty {
       padding: 15px 20px;

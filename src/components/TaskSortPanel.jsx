@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import { Context } from "..";
 
 import './styles/taskSortPanel.scss'
+import { observer } from 'mobx-react-lite';
 
-export const TaskSortPanel = (props) => {
+export const TaskSortPanel = observer((props) => {
   const {user} = useContext(Context)
 
     return (
@@ -21,4 +22,4 @@ export const TaskSortPanel = (props) => {
       </div>
       </div>
     );
-}
+})

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles/addTask.scss'
 export const AddTask = (props) => {
+  const [userName, setUserName] = useState(false)
+  const [email, setEmail] = useState(false)
+  const [taskText, setTaskText] = useState(false)
+  
   return (
     <div className="container">
       <div className="add-task">
