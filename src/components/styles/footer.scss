@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 20px 0px;
+  &__container {
+    background: rgb(38, 62, 139);
+  }
+  &__left {
+    color: white;
+    font-size: 12px;
+  }
+  &__right {
+    color: white;
+    font-size: 12px;
+  }
+}

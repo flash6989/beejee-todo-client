@@ -1,0 +1,36 @@
+.add-task {
+  margin-top: 10px;
+  form {
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.158);
+    padding: 10px;
+    input {
+      &::placeholder {
+        font-size: 14px;
+        padding-left: 7px;
+      }
+      &:nth-child(1) {
+        width: 100%;
+      }
+      padding: 7px;
+      color: rgb(0, 0, 0);
+    }
+  }
+  &__button{
+    color: black;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid rgba(27, 68, 143, 0.596);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  &__bottom {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
