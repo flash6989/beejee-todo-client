@@ -8,8 +8,12 @@ const $authHost = axios.create({
   baseURL: process.env.REACT_APP_API_URL
 })
 
-const authInterceptor = config => {
-  config.headers.authoriation = `Bearer ${localStorage.getItem('token')}`
+const authInterceptor = async config => {
+  config.headers = {
+    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+    'Accept': 'application/json',
+  }
+  return config
 }
 
 $authHost.interceptors.request.use(authInterceptor)

@@ -5,6 +5,7 @@ import '../components/styles/loginForm.scss'
 import { login } from "../http/userApi";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
+import { HOME_ROUTE } from "../utils/consts";
 
 const AuthForm = observer((props) => {
   const {user} = useContext(Context)
@@ -38,8 +39,8 @@ const AuthForm = observer((props) => {
     return true
   }
 
-  const [ userlLogin, setUserLogin] = useState(null)
-  const [ password, setPassword] = useState(null)
+  const [ userlLogin, setUserLogin] = useState('')
+  const [ password, setPassword] = useState('')
 
   return (
       <div className="login">
@@ -50,16 +51,16 @@ const AuthForm = observer((props) => {
         <form action="auth" className="login__form">
           <div className="login__name">
             <p p>Логин</p>
-            <input type="text" value={userlLogin} onChange={e => {setUserLogin(e.target.value)}} name="" id="" placeholder="Введите логин"/>
+            <input type="text" value={userlLogin} onChange={e => {setUserLogin(e.target.value)}} name="" id="login" placeholder="Введите логин"/>
           </div>
           <div className="login__password">
             <p>Пароль</p>
-            <input type="password" value={password} onChange={e => {setPassword(e.target.value)}} name="" id="" placeholder="Введите пароль"/>
+            <input type="password" value={password} onChange={e => {setPassword(e.target.value)}} name="" id="password" placeholder="Введите пароль"/>
           </div>
           <input className="login__button" type="button" onClick={signIn} value="Авторизоваться" />
         </form>
         <div className="button__back-to-list">
-          <Link to="/">Вернуться к списку задач</Link>
+          <Link to={HOME_ROUTE}>Вернуться к списку задач</Link>
         </div>
       </div>
   );

@@ -8,16 +8,6 @@ const routes = [
   {
     path: AUTHPAGE_ROUTE,
     Component: Auth,
-    childRoutes: [
-      {
-        path: LOGIN_ROUTE,
-        Component: LoginForm
-      },
-      {
-        path: REGISTER_ROUTE,
-        Component: RegisterForm
-      },
-    ]
   },
   {
     path: HOME_ROUTE,

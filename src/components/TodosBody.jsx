@@ -5,11 +5,11 @@ import { TaskSortPanel} from './TaskSortPanel'
 import './styles/todosBody.scss'
 
 export const TodosBody = (props) => {
-    return (
-       <div className="todos-body">
-          <AddTask />
-          <TaskSortPanel />
-          <TaskList />
-       </div>
-    );
+  return (
+      <div className="todos-body">
+        <AddTask />
+        <TaskSortPanel />
+        <TaskList />
+      </div>
+  );
 }
