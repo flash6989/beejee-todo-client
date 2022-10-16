@@ -10,6 +10,7 @@ export const Pages = observer((props) => {
   const limit = 3
 
 const changeActivePage = async (number) => {
+  if (number === todo.activePage) return
   const {count, rows} = await fetchTasks(undefined, number, todo.sort)
   todo.setTodos(rows)
   console.log(count, rows)

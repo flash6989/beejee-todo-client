@@ -16,7 +16,7 @@ export const AddTask = observer((props) => {
     if (!isValidate) return
     const res = await addTask({userName, email, text: taskText})
     if(res) {
-      fetchTasks(undefined, todo.activePage, todo.limit).then(data => {
+      fetchTasks(undefined, todo.activePage, todo.sort).then(data => {
         todo.setTodos(data.rows)
         todo.setCountTodos(data.count)
         alert('Задача успешно добавлена!')

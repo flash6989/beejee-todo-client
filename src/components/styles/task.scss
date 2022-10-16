@@ -1,9 +1,9 @@
 .task {
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.158);
- 
+  position: relative;
   &__text{
-    padding: 15px 20px;
+    padding: 15px 20px 15px 30px;
     border-right: 1px solid rgba(0, 0, 0, 0.158);
     flex: 2.5;
     min-width: 400px;
@@ -11,6 +11,15 @@
     position: relative;
     display: flex;
     align-items: center;
+    &_complete {
+      text-decoration: line-through;
+    }
+  }
+  &__checkbox {
+    position: absolute !important;
+    left: 8px;
+    top: 19px;
+    z-index: 2;
   }
   &__name{
     padding: 15px 20px;
