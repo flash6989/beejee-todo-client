@@ -12,12 +12,11 @@ export const AddTask = observer((props) => {
   const [taskText, setTaskText] = useState('')
   
   const addTaskHandler = async (e) => {
-    console.log(userName, email, taskText)
     const isValidate = validateFields()
     if (!isValidate) return
     const res = await addTask({userName, email, text: taskText})
     if(res) {
-      fetchTasks().then(data => {
+      fetchTasks(undefined, todo.activePage, todo.limit).then(data => {
         todo.setTodos(data.rows)
         todo.setCountTodos(data.count)
         alert('Задача успешно добавлена!')
@@ -40,6 +39,10 @@ export const AddTask = observer((props) => {
     }
     if (!email) {
       alert('Поле емайл обязательно для заполнения')
+      return false
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Введен некорректный емайл')
       return false
     }
     return true

@@ -8,7 +8,7 @@ import { fetchTasks } from "../http/taskApi";
 export const TaskList = observer((props) => {
   const {todo, user} = useContext(Context)
   useEffect(() => {
-    fetchTasks().then(data => {
+    fetchTasks(undefined, todo.activePage, todo.sort).then(data => {
       todo.setTodos(data.rows)
       todo.setCountTodos(data.count)
     }).catch()
