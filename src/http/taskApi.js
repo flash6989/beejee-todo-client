@@ -1,7 +1,7 @@
 import { $authHost, $host } from ".";
 import jwt_decode from 'jwt-decode'
 
-export const fetchTasks = async (limit = 10, page = 1) => {
+export const fetchTasks = async (limit = 3, page = 1) => {
   const {data} = await $host.get(`/fetchtasks/${limit}/${page}`)
   return data
 }

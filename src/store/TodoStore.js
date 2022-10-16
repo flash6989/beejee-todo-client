@@ -24,5 +24,8 @@ export default class TodoStore {
   get editableTask() {
     return this._editableTask
   }
+  get countTodos() {
+    return this._countTodos
+  }
  
 }

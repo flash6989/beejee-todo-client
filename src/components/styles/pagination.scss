@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  &__item {
+    padding: 5px 10px;
+    border: 1px solid black;
+    &_active {
+      background-color: rgba(16, 9, 83, 0.808);
+      span {
+        color:antiquewhite;
+      }
+    }
+   
+  }
+  
+}

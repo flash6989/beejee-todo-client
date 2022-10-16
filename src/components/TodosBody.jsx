@@ -3,6 +3,7 @@ import { AddTask } from "./AddTask";
 import { TaskList } from "./TaskList";
 import { TaskSortPanel} from './TaskSortPanel'
 import './styles/todosBody.scss'
+import { Pages } from "./Pages";
 
 export const TodosBody = (props) => {
   return (
@@ -10,6 +11,7 @@ export const TodosBody = (props) => {
         <AddTask />
         <TaskSortPanel />
         <TaskList />
+        <Pages />
       </div>
   );
 }
