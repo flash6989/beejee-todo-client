@@ -33,7 +33,7 @@ return (
     <Pagination className="pages" size="lg">
       {createArrCountPages(task.countTasks).map((number) => {
         return <Pagination.Item 
-        className={task.activePage === number ? 'pages__item pagination__item_active': 'pages__item'}  
+        className={task.activePage === number ? 'pages__item pages__item_active': 'pages__item'}  
         activeLabel="" 
         onClick={() => changeActivePage(number)} 
         key={number} 
