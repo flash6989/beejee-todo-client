@@ -1,3 +1,10 @@
 .todos-body {
   flex: 2;
 }
+
+.table__tasks {
+  width: 100%;
+  border-spacing: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+  margin-bottom: 20px;
+}

@@ -21,7 +21,6 @@ export const TaskSortPanel = observer((props) => {
         const res = await fetchTasks(undefined, todo.activePage, todo.sort)
         todo.setTodos(res.rows)
         todo.setCountTodos(res.count)
-        console.log(res, 1)
         return
       }
       filterObj.filterName = filter
@@ -31,9 +30,6 @@ export const TaskSortPanel = observer((props) => {
         const res = await fetchTasks(undefined, todo.activePage, todo.sort)
         todo.setTodos(res.rows)
         todo.setCountTodos(res.count)
-        console.log(res)
-        todo.setTask = 
-        console.log(res, 2)
         return
       }
       filterObj.direction = 'DESC'
@@ -41,24 +37,23 @@ export const TaskSortPanel = observer((props) => {
       const res = await fetchTasks(undefined, todo.activePage, todo.sort)
       todo.setTodos(res.rows)
       todo.setCountTodos(res.count)
-      console.log(res, 3)
     } catch(e) {
       alert(e.response.data.message)
     }
    
   }
     return (
-      <div className="container">
-        <div className="task__filter-by">
-        <div className="task__filter-by-text" onClick={() => setSortFields('text')}><p>Текст задачи</p><img className="task__img" src={arrow}/></div>
-        <div className="task__filter-by-name" onClick={() => setSortFields('userName')}><p>Имя пользователя</p><img className="task__img" src={arrow}/></div>
-        <div className="task__filter-by-email" onClick={() => setSortFields('email')}><p>Емайл пользователя</p><img className="task__img" src={arrow}/></div>
-        {
-          user.isAdmin ? 
-          <div className="task__filter-by-empty"></div> :
-          null
-        }
-      </div>
-      </div>
+      <thead>
+        <tr className="task__filter-by">
+          <th className="task__filter-by-text" onClick={() => setSortFields('text')}>Текст задачи<img className={todo.sort.filterName === 'text' && todo.sort.direction === 'DESC' ? 'task__img' : 'task__img_upend'} src={arrow}/></th>
+          <th className="task__filter-by-name" onClick={() => setSortFields('userName')}>Имя пользователя<img className={todo.sort.filterName === 'userName' && todo.sort.direction === 'DESC' ? 'task__img' : 'task__img_upend'} src={arrow}/></th>
+          <th className="task__filter-by-email" onClick={() => setSortFields('email')}>Емайл пользователя<img className={todo.sort.filterName === 'email' && todo.sort.direction === 'DESC' ? 'task__img' : 'task__img_upend'} src={arrow}/></th>
+          {
+            user.isAdmin ? 
+            <th className="task__filter-by-empty"></th> :
+            null
+          }
+        </tr>
+      </thead>
     );
 })

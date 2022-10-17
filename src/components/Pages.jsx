@@ -13,19 +13,16 @@ const changeActivePage = async (number) => {
   if (number === todo.activePage) return
   const {count, rows} = await fetchTasks(undefined, number, todo.sort)
   todo.setTodos(rows)
-  console.log(count, rows)
   todo.setActivePage(number)
 }
 const createArrCountPages = (countTodos) => {
 const countPages = Math.ceil(countTodos / todo.limit)
 const arr = []
 let count = 0
-console.log(countPages)
 for(const i in Array(countPages).fill(1)) {
   arr.push(count + 1)
   count += 1
 }
-console.log(arr)
 return arr
 }
 return (

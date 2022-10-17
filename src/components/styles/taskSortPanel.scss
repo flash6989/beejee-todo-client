@@ -1,54 +1,40 @@
 .task {
   &__filter-by {
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-    p{
+    background-color: rgb(65, 80, 110);
+    th {
       font-size: 16px;
-      color: white;
-    }
-    div {
-      background-color: rgb(65, 80, 110);
+      color:  white;
+      text-align: left;
     }
     &-text {
       padding: 15px 20px;
-      border-right: 1px solid rgba(0, 0, 0, 0.158);
-      flex: 2.5;
-      min-width: 400px;
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      align-items: center;
       cursor: pointer;
+      min-width: 400px;
     }
     &-name {
       padding: 15px 20px;
-      border-right: 1px solid rgba(0, 0, 0, 0.158);
-      flex: 1;
-      min-width: 200px;
+      width: 200px;
       box-sizing: border-box;
-      display: flex;
       align-items: center;
       cursor: pointer;
+      min-width: 210px;
     }
     &-email {
       padding: 15px 20px;
-      flex: 1;
-      min-width: 200px;
       box-sizing: border-box;
-      display: flex;
       align-items: center;
       cursor: pointer;
+      width: 260px;
     }
     &-empty {
-      padding: 15px 20px;
       width: 70px;
-      text-align: center;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
     }
   }
   &__img {
     margin-left: 10px;
+    &_upend {
+      margin-left: 10px;
+      transform: rotate(180deg);
+    }
   }
 }

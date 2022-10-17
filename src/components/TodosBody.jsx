@@ -9,8 +9,12 @@ export const TodosBody = (props) => {
   return (
       <div className="todos-body">
         <AddTask />
-        <TaskSortPanel />
-        <TaskList />
+        <div className="container">
+          <table className="table__tasks">
+            <TaskSortPanel />
+            <TaskList />
+          </table>
+        </div>
         <Pages />
       </div>
   );

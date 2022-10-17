@@ -14,8 +14,7 @@ export const TaskList = observer((props) => {
     }).catch()
   }, [])
   return (
-    <div className="container">
-      <div className="task-list">
+      <tbody>
         {
           todo.todos.map(todo => {
             return <Task 
@@ -25,7 +24,6 @@ export const TaskList = observer((props) => {
             />
           })
         }
-      </div>
-    </div>
+      </tbody>
   );
 })

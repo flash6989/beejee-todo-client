@@ -1,42 +1,38 @@
 .task {
-  display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.158);
   position: relative;
+  td {
+    border-top: 1px solid rgba(0, 0, 0, 0.151);
+    &:first-child {
+      border-left: 1px solid rgba(0, 0, 0, 0.151);
+    }
+    &:last-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.151);
+    }
+  }
+ 
   &__text{
     padding: 15px 20px 15px 30px;
-    border-right: 1px solid rgba(0, 0, 0, 0.158);
-    flex: 2.5;
-    min-width: 400px;
     box-sizing: border-box;
     position: relative;
-    display: flex;
     align-items: center;
     &_complete {
       text-decoration: line-through;
     }
+
   }
   &__checkbox {
-    position: absolute !important;
-    left: 8px;
-    top: 19px;
+    margin-right: 15px;
     z-index: 2;
+    transform:scale(1.6);
   }
   &__name{
     padding: 15px 20px;
-    border-right: 1px solid rgba(0, 0, 0, 0.158);
-    flex: 1;
-    min-width: 200px;
-    box-sizing: border-box;
-    display: flex;
     align-items: center;
   }
   &__email{
     padding: 15px 20px;
-    border-right: 1px solid rgba(0, 0, 0, 0.158);
-    flex: 1;
-    min-width: 200px;
     box-sizing: border-box;
-    display: flex;
     align-items: center;
   }
   &__edit {
@@ -46,7 +42,6 @@
     width: 70px;
     text-align: center;
     box-sizing: border-box;
-    display: flex;
     align-items: center;
     cursor: pointer;
     &_active {
@@ -75,8 +70,6 @@
   }
 
   &__filter-by {
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
     p{
       font-size: 16px;
       color: white;
@@ -85,35 +78,21 @@
       background-color: rgb(65, 80, 110);
     }
     &-text {
-      padding: 15px 20px;
-      border-right: 1px solid rgba(0, 0, 0, 0.158);
-      flex: 2.5;
-      min-width: 400px;
       box-sizing: border-box;
       position: relative;
-      display: flex;
       align-items: center;
+      white-space: pre-line;
     }
     &-name {
-      padding: 15px 20px;
-      border-right: 1px solid rgba(0, 0, 0, 0.158);
-      flex: 1;
-      min-width: 200px;
       box-sizing: border-box;
-      display: flex;
       align-items: center;
     }
     &-email {
-      padding: 15px 20px;
-      flex: 1;
-      min-width: 200px;
       box-sizing: border-box;
-      display: flex;
       align-items: center;
       word-wrap: break-word;
     }
     &-empty {
-      padding: 15px 20px;
       width: 70px;
       text-align: center;
       box-sizing: border-box;
