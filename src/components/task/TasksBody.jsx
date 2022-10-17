@@ -2,10 +2,9 @@ import React from "react";
 import { AddTask } from "./AddTask";
 import { TaskList } from "./TaskList";
 import { TaskSortPanel} from './TaskSortPanel'
-import './styles/todosBody.scss'
-import { Pages } from "./Pages";
+import '../styles/todosBody.scss'
 
-export const TodosBody = (props) => {
+export const TasksBody = (props) => {
   return (
       <div className="todos-body">
         <AddTask />
@@ -15,7 +14,6 @@ export const TodosBody = (props) => {
             <TaskList />
           </table>
         </div>
-        <Pages />
       </div>
   );
 }

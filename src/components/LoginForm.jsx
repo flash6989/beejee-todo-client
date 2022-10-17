@@ -1,17 +1,18 @@
 
 import { Link, useNavigate  } from "react-router-dom";
 import React, { useContext, useState } from "react";
-import '../components/styles/loginForm.scss'
 import { login } from "../http/userApi";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
 import { HOME_ROUTE } from "../utils/consts";
 
+import '../components/styles/loginForm.scss'
+
 const AuthForm = observer((props) => {
   const {user} = useContext(Context)
   const navigate = useNavigate()
 
-  const signIn = async (e) => {
+  const signIn = async () => {
     try {
       const isValid = validateAuthData(userlLogin, password)
       if (!isValid) return
@@ -24,7 +25,6 @@ const AuthForm = observer((props) => {
     } catch(e) {
       alert(e.response.data.message)
     }
-    
   }
 
   const validateAuthData = (userLogin, userPassword) => {
@@ -47,7 +47,6 @@ const AuthForm = observer((props) => {
         <div className="login__header">
           <h2>Авторизация</h2>
         </div>
-        
         <form action="auth" className="login__form">
           <div className="login__name">
             <p p>Логин</p>

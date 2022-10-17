@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import './styles/addTask.scss'
-import { addTask, fetchTasks } from "../http/taskApi";
+import { Context } from "../..";
+import '../styles/addTask.scss'
+import { addTask, fetchTasks } from "../../http/taskApi";
 import { observer } from "mobx-react-lite";
-import { Context } from "..";
 
 export const AddTask = observer((props) => {
-  const {todo} = useContext(Context)
+  const {task} = useContext(Context)
 
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -16,9 +16,9 @@ export const AddTask = observer((props) => {
     if (!isValidate) return
     const res = await addTask({userName, email, text: taskText})
     if(res) {
-      fetchTasks(undefined, todo.activePage, todo.sort).then(data => {
-        todo.setTodos(data.rows)
-        todo.setCountTodos(data.count)
+      fetchTasks(undefined, task.activePage, task.sort).then(data => {
+        task.setTasks(data.rows)
+        task.setCountTasks(data.count)
         alert('Задача успешно добавлена!')
       }).catch()
     }

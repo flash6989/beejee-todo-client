@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import TodoStore from './store/TodoStore';
+import TaskStore from './store/TaskStore';
 import UserStore from './store/UserStore';
 
 
@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
   <Context.Provider value={{
     user: new UserStore(),
-    todo: new TodoStore()
+    task: new TaskStore()
   }}>
     <App />
   </Context.Provider>

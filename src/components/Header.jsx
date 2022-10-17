@@ -21,10 +21,10 @@ export const Header = observer( (props) => {
           <div className="header__logo"> <Link to={HOME_ROUTE}>Logo</Link></div>
           <div div className="header__menu-links">
             <ul>
-              {user.isAuth ?
-                <li onClick={() => logout()}>Выйти</li>
-                :
-                <li><Link to={AUTHPAGE_ROUTE}>Войти</Link></li>
+              {
+                user.isAuth 
+                ? <li onClick={() => logout()}>Выйти</li>
+                : <li><Link to={AUTHPAGE_ROUTE}>Войти</Link></li>
               }
             </ul>
           </div>

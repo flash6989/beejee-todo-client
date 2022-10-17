@@ -1,24 +1,24 @@
 import { makeAutoObservable } from "mobx"
 
-export default class TodoStore {
+export default class TaskStore {
   constructor() {
-   this._todos = []
+   this._tasks = []
    this._editableTask = {}
-   this._countTodos = 0
+   this._countTasks = 0
    this._activePage = 1
    this._sort = {filterName: 'text', direction: 'ASC'}
    this._limit = 3
     makeAutoObservable(this)
   }
 
-  setTodos(todos) {
-    this._todos = todos
+  setTasks(tasks) {
+    this._tasks = tasks
   }
-  setEditableTask(todo) {
-    this._editableTask = todo
+  setEditableTask(task) {
+    this._editableTask = task
   }
-  setCountTodos(count) {
-    this._countTodos = count
+  setCountTasks(task) {
+    this._countTasks = task
   }
   setSort(sort) {
     this._sort = sort
@@ -27,15 +27,14 @@ export default class TodoStore {
     this._activePage = num
   }
 
-
-  get todos() {
-    return this._todos
+  get tasks() {
+    return this._tasks
   }
   get editableTask() {
     return this._editableTask
   }
-  get countTodos() {
-    return this._countTodos
+  get countTasks() {
+    return this._countTasks
   }
   get sort() {
     return this._sort

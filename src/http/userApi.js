@@ -2,9 +2,13 @@ import { $authHost, $host } from ".";
 import jwt_decode from 'jwt-decode'
 
 export const login = async (login, password) => {
-  const {data} = await $host.post('login', {login, password})
-  localStorage.setItem('token', data.token)
-  return jwt_decode(data.token)
+  try {
+    const {data} = await $host.post('login', {login, password})
+    localStorage.setItem('token', data.token)
+    return jwt_decode(data.token)
+  } catch(e) {
+    console.log(e)
+  }
 }
 
 export const check = async () => {
@@ -15,5 +19,4 @@ export const check = async () => {
   } catch(e) {
     console.log(e)
   }
-
 }

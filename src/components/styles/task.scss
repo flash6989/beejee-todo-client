@@ -70,6 +70,42 @@
   }
 
   &__filter-by {
+    background-color: rgb(65, 80, 110);
+    th {
+      font-size: 16px;
+      color:  white;
+      text-align: left;
+    }
+    &-text {
+      padding: 15px 20px;
+      cursor: pointer;
+      min-width: 400px;
+    }
+    &-name {
+      padding: 15px 20px;
+      width: 200px;
+      box-sizing: border-box;
+      align-items: center;
+      cursor: pointer;
+      min-width: 210px;
+    }
+    &-email {
+      padding: 15px 20px;
+      box-sizing: border-box;
+      align-items: center;
+      cursor: pointer;
+      width: 260px;
+    }
+    &-empty {
+      width: 70px;
+    }
+  }
+  &__img {
+    margin-left: 10px;
+    &_upend {
+      margin-left: 10px;
+      transform: rotate(180deg);
+    }
     p{
       font-size: 16px;
       color: white;
